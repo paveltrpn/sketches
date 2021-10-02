@@ -145,6 +145,13 @@ def printMeshUVTriang(bar: bpy.types.Object) -> None:
 
         print("")
 
+def foobar(mesh):
+    mesh.calc_loop_triangles()
+    for tri in mesh.loop_triangles:
+     tri_center = (mesh.vertices[tri.vertices[0]].co * 0.333) +\
+                  (mesh.vertices[tri.vertices[1]].co * 0.333) +\
+                  (mesh.vertices[tri.vertices[2]].co * 0.333)
+                  
 def main() -> None:
     entities = CSceneEntities()
 
