@@ -1,5 +1,4 @@
 
-from typing_extensions import TypeAlias
 import mtrx4 as mtrx4
 import vec3 as vec3
 import numpy as np
