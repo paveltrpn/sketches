@@ -28,4 +28,4 @@ main: $(OBJS)
 	$(CC) $(OBJS) $(addprefix -L,$(LIBDIR)) -o main $(LFLAGS)
 
 clean:
-	rm -f build/*.o main
+	rm -f build/*.o main.exe
