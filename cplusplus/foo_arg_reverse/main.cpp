@@ -5,6 +5,7 @@
 // 
 // Определить функцию, принимающую в произвольном порядке аргументы типов bool, int, std::string_view и вызывающую 
 // функцию do_something с переданными параметрами в качестве аргументов.
+// https://habr.com/ru/post/593429/
 
 #include <iostream>
 #include <string>
