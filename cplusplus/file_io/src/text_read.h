@@ -8,6 +8,8 @@
 
 std::string textRead1(std::string fname);
 std::string textRead2(std::string fname);
+std::string textRead3(std::string fname);
+
 std::pair<std::vector<std::string>, size_t> textReadToStrVec(std::string fname);
 
 #endif

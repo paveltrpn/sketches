@@ -4,13 +4,12 @@ LFLAGS 	 = -lstdc++
 
 INCDIR	 := 
 LIBDIR	 := 
-BUILD_PREFIX = build
+BUILD_PREFIX = 
 VPATH := src
 
-SRCS := test.cpp \
-		text_read.cpp
+SRCS := main.cpp
 
-OBJS := $(patsubst %.cpp,$(BUILD_PREFIX)/%.o,$(SRCS))
+OBJS := $(patsubst %.cpp, %.o,$(SRCS))
 
 #OBJS := $(SRCS:.cpp=.o)
 
@@ -18,14 +17,11 @@ OBJS := $(patsubst %.cpp,$(BUILD_PREFIX)/%.o,$(SRCS))
 
 all: $(OBJS) main
 
-$(BUILD_PREFIX)/test.o: test.cpp
-	$(CC) $(CFLAGS) $(addprefix -I,$(INCDIR)) -c $< -o $@
-
-$(BUILD_PREFIX)/text_read.o: text_read.cpp
+main.o: main.cpp
 	$(CC) $(CFLAGS) $(addprefix -I,$(INCDIR)) -c $< -o $@
 
 main: $(OBJS)
 	$(CC) $(OBJS) $(addprefix -L,$(LIBDIR)) -o main $(LFLAGS)
 
 clean:
-	rm -f build/*.o main
+	rm -f *.o main

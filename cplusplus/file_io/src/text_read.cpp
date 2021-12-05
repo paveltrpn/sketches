@@ -70,3 +70,21 @@ std::pair<std::vector<std::string>, size_t> textReadToStrVec(std::string fname) 
     
     return std::make_pair(content, fsize); 
 }
+
+std::string textRead3(std::string fname) {
+    std::ifstream inFile;
+	std::string rt;
+
+	inFile.open(fname);
+
+	if (!inFile) {
+		std::cout << "compileShader(): error! can't open file - " << fname << "\n";
+		std::exit(0);
+	}
+
+	rt = std::string{std::istreambuf_iterator<char>{inFile}, {}};
+
+    inFile.close();
+
+    return rt;
+}
