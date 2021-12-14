@@ -189,9 +189,9 @@ def mtrx4FromLookAt(eye: vec3, center: vec3, up: vec3) -> mtrx4:
     x2 = up[0]*z1 - up[1]*z0
     len = hypot(x0, x1, x2)
     if (len == 0.0):
-	    x0 = 0
-	    x1 = 0
-	    x2 = 0
+        x0 = 0
+        x1 = 0
+        x2 = 0
     else:
         len = 1.0 / len
         x0 *= len
@@ -263,7 +263,7 @@ def mtrx4MultArrayVec3(m: mtrx4, ar: array) -> None:
         for i in range(4): 
             tmp = 0
             for j in range(4):
-            	tmp = tmp + m[IdRw(i, j, 4)]*vec[j]
+                tmp = tmp + m[IdRw(i, j, 4)]*vec[j]
             rt[i] = tmp
         
         ar[arId+0] = rt[0]
@@ -282,5 +282,5 @@ def mtrx4MultArrayVec4(m: mtrx4, ar: array) -> None:
         for i in range(4): 
             tmp = 0
             for j in range(4):
-            	tmp = tmp + m[IdRw(i, j, 4)]*ar[arId+j]
+                tmp = tmp + m[IdRw(i, j, 4)]*ar[arId+j]
             ar[arId+i] = tmp

@@ -15,6 +15,7 @@ def getFileSize(fname: str) -> int:
 
     return size
 
+# Берём размер файла из объекта Bffered reader
 def getFileSizeBR(file: BufferedReader) -> int:
     pos = file.tell() # Запонили позицию в файле
 
