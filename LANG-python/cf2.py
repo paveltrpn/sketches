@@ -3,7 +3,7 @@ from concurrent.futures.thread import _worker
 import math
 import sys
 
-def calc(val: float) -> float:
+def calc(val: float):
     result = math.sqrt(float(val))
     return val, result
 
