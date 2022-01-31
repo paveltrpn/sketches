@@ -12,13 +12,15 @@ export function testfreadSync() {
     let fileContent = fs.readFileSync("../assets/raven.txt", "utf8")
     let words = smnp.splitBySpace(fileContent);
 
-    // for (let i = 0; i < 5; i++) {
-        // console.log(words[i])
-    // }
+    for (let i = 0; i < 5; i++) {
+        console.log(words[i])
+    }
 
-    // console.log(removePunctuation(fileContent))
+    console.log(smnp.removePunctuation(fileContent))
 }
 
-(function main() {
+/* ============ ENTRY POINT ================ */
+/* ============ function main() ============ */
+(() => { 
     testfreadSync();
 })();
