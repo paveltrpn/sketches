@@ -7,7 +7,8 @@ from typing import Any
 # FILTERED = [".jpg", ".py", ".png", ".css"]
 
 # Этот класс работает так же как и функция с декоратором менеджера контекста
-# ниже - chdir()
+# ниже - chdir(), только использут методы __enter__() и __exit__() чтобы 
+# сделать класс с менеджером контекста
 class chdir_c:
     def __init__(self, wd: str) -> None:
         self.workDir = wd
