@@ -19,11 +19,11 @@ func expr() {
 		if lookahead == '+' {
 			match('+')
 			term()
-			outExpr.appenTermToExprStr('+')
+			outExpr.appendTermToExprStr('+')
 		} else if lookahead == '-' {
 			match('-')
 			term()
-			outExpr.appenTermToExprStr('-')
+			outExpr.appendTermToExprStr('-')
 		} else {
 			return
 		}
@@ -34,7 +34,7 @@ func term() {
 	if unicode.IsNumber(rune(lookahead)) {
 		t := lookahead
 		match(lookahead)
-		outExpr.appenTermToExprStr(t)
+		outExpr.appendTermToExprStr(t)
 	} else {
 		fmt.Printf("syntax error in term()! %v - is not number!\n", string(rune(lookahead)))
 		os.Exit(1)

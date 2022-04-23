@@ -5,11 +5,15 @@ type expressionString_s struct {
 	str string
 }
 
+type expressionStringInterface interface {
+	buildExpressionString(str string) expressionString_s
+}
+
 func buildExpressionString(str string) expressionString_s {
 	return expressionString_s{0, str}
 }
 
-func (es *expressionString_s) appenTermToExprStr(term int) {
+func (es *expressionString_s) appendTermToExprStr(term int) {
 	es.str = es.str + string(rune(term))
 }
 
