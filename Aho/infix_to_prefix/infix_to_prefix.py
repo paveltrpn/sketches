@@ -2,41 +2,40 @@
 from expression_string import *
 
 
-foo: expressionString_c = expressionString_c("9+5-2")
+foo: expressionString_c = expressionString_c("9-5+2-1+7")
 lookahead: str = ""
-
+stash: str = ""
 
 def expr() -> None:
+    global lookahead
+    global stash
     term()
     while True:
         if lookahead == "+":
-            match("+")
-            term()
             print("+", end="")
-        elif lookahead == "-":
-            match("-")
+            lookahead = foo.getNextChar()[1]
             term()
+            stash = ""
+        elif lookahead == "-":
             print("-", end="")
+            lookahead = foo.getNextChar()[1]
+            term()
+            stash = ""
         else:
             return
 
 def term() -> None:
+    global lookahead
+    global stash
+
+    print(stash, end="")
     if lookahead.isnumeric():
-        t = lookahead
-        match(lookahead)
-        print(t, end="")
+        stash = lookahead
+        print(lookahead, end="")
+        lookahead = foo.getNextChar()[1]
     else:
         print("syntax error in term()! {} - is not number!".format(lookahead))
         exit()
-
-def match(t: str) -> None:
-    global lookahead
-    if lookahead == t:
-        lookahead = foo.getNextChar()[1]
-    else:
-        print("syntax error in match!")
-        exit(0)
-
 
 def main() -> None:
     print("read: ", end="")
@@ -46,7 +45,9 @@ def main() -> None:
         foo.loadNewString(inputStr)
 
     global lookahead
+    global stash
     lookahead = foo.getNextChar()[1]
+    stash = ""
 
     expr()
     print()

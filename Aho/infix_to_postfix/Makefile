@@ -1,5 +1,5 @@
 CC       = gcc
-CFLAGS   = -Wall -Wextra -Wpedantic -Wno-unused-parameter -std=c17
+CFLAGS   = -Wall -Wconversion -Wextra -Wpedantic -Wno-unused-parameter -std=c17
 LFLAGS 	 = 
 
 UNAME_S := $(shell uname -s)

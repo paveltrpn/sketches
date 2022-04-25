@@ -4,12 +4,7 @@ class expressionString_c:
         self.pos: int = 0
         self.string: str = line
 
-    
     def getNextChar(self) -> tuple[int, str]:
-        """
-        @return: Return chracter at self.pos in self.string 
-        and increment a self.pos.
-        """
         if self.pos+1 > len(self.string):
             return -1, ""
 
@@ -18,9 +13,6 @@ class expressionString_c:
         return self.pos, rt
 
     def setPos(self, pos: int) -> int:
-        """
-        @param pos: New self.pos value.
-        """
         if pos > len(self.string) or pos < 0:
             return -1
         self.pos = pos
