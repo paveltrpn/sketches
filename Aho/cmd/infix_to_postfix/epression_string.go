@@ -17,6 +17,8 @@ func (es *expressionString_s) appendTermToExprStr(term int) {
 	es.str = es.str + string(rune(term))
 }
 
+// Return a char from expressionString_s.str at position es.pos
+// and increments a expressionString_s.pos.
 func (es *expressionString_s) getNextChar() (int, int) {
 	if es.pos+1 > len([]rune(es.str)) {
 		return -1, int(' ')

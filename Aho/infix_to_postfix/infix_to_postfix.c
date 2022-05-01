@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 #include "expression_string.h"
 
@@ -10,7 +11,7 @@ int32_t lookahead = 0;
 
 void expr() {
     term();
-    while (1) {
+    while (true) {
         if (lookahead == '+') {
             match('+');
             term();
