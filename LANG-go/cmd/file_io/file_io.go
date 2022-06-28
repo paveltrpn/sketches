@@ -1,17 +1,17 @@
 package main
 
 import (
-	"file_io/internal/read"
+	"LANG-go/intern/read"
 	"fmt"
 )
 
 func main() {
 	println("Golang file IO test")
-	foo := read.TextRead("../assets/raven.txt")
+	foo := read.TextRead("../../assets/raven.txt")
 
 	println(foo[:100])
 
-	bar := read.TextReadLines("../assets/raven.txt")
+	bar := read.TextReadLines("../../assets/raven.txt")
 	for i := range bar {
 		fmt.Printf("%v: %v\n", i, bar[i])
 
